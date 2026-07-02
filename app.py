@@ -1,7 +1,7 @@
 print("APP.PY STARTED")
 from fastapi import FastAPI
 print("importing main")
-from main import main
+
 from models import Message,ChatRequest
 from langchain_core.messages import ToolMessage
 import uvicorn 
@@ -21,6 +21,7 @@ def root():
 
 @app.post("/chat")
 def chat(request:ChatRequest):
+    from main import main
     conv =str(request.messages)
     response=main(conv)
     tool_messages = [msg for msg in response["messages"] if isinstance(msg, ToolMessage)]
