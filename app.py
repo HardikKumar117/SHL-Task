@@ -2,7 +2,11 @@ from fastapi import FastAPI
 from main import main
 from models import Message,ChatRequest
 from langchain_core.messages import ToolMessage
+import uvicorn 
+import os
 import json
+
+PORT = int(os.environ.get("PORT", 8000))
 app = FastAPI()
 
 @app.get("/health")
@@ -17,3 +21,10 @@ def chat(request:ChatRequest):
 
     return {"response": response["messages"][-1].content,
             "recommendations": json.loads( tool_messages[-1].content)}
+if __name__ == "__main__":
+    uvicorn.run(
+        "app:app",
+        host="0.0.0.0",
+        port=PORT,
+        reload=True
+    )
