@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+print("importing main")
 from main import main
 from models import Message,ChatRequest
 from langchain_core.messages import ToolMessage
