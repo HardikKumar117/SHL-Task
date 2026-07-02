@@ -9,6 +9,10 @@ import json
 PORT = int(os.environ.get("PORT", 8000))
 app = FastAPI()
 
+@app.get("/")
+def func():
+    return {"message": "server is runnning"}
+
 @app.get("/health")
 def root():
     return {"status": "ok"}
