@@ -1,3 +1,4 @@
+print("APP.PY STARTED")
 from fastapi import FastAPI
 print("importing main")
 #from main import main
