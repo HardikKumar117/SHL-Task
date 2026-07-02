@@ -3,9 +3,6 @@ langgraph
 dotenv
 pydantic 
 langchain-groq
-faiss-cpu
-transformers
-torch
 chromadb
 sentence-transformers
 fastapi[standard]
