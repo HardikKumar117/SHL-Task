@@ -1,0 +1,8 @@
+langchain
+langgraph
+dotenv
+pydantic 
+langchain-groq
+faiss-cpu
+transformers
+torch
